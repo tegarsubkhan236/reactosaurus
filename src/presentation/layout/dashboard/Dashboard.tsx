@@ -1,9 +1,10 @@
-import { Layout } from 'antd'
-import IHeader from './components/IHeader.tsx'
+import {Layout} from 'antd'
+import {Outlet} from "react-router-dom";
 import { DashboardProvider } from './DashboardContext.tsx'
-import IDrawer from './components/IDrawer.tsx'
-import IContent from './components/IContent.tsx'
-import ISider from './components/ISider.tsx'
+import IHeader from './IHeader.tsx'
+import ISider from './ISider.tsx'
+
+const {Content} = Layout
 
 const Dashboard = () => {
     return (
@@ -12,12 +13,13 @@ const Dashboard = () => {
                 <IHeader />
                 <Layout>
                     <ISider />
-                    <Layout style={{ padding: '24px' }}>
-                        <IContent />
+                    <Layout>
+                        <Content>
+                            <Outlet />
+                        </Content>
                     </Layout>
                 </Layout>
             </Layout>
-            <IDrawer />
         </DashboardProvider>
     )
 }

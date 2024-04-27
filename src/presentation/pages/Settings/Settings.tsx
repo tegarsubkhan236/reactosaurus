@@ -1,13 +1,15 @@
 import { Card, Flex, Form, Radio, Select, Typography } from 'antd'
 import './Setting.css'
 import { useDashboardContext } from '../../layout/dashboard/DashboardContext.tsx'
+import PageContent from "../../components/PageContent";
 
 const { Text } = Typography
 const Settings = () => {
     const { menuOrientation, changeMenuOrientation } = useDashboardContext()
 
     return (
-        <Card title="My Theme">
+        <PageContent>
+            <Card title="My Theme" bordered={false}>
             <Form
                 labelCol={{ span: 4 }}
                 wrapperCol={{ span: 18 }}
@@ -64,6 +66,7 @@ const Settings = () => {
                 </Form.Item>
             </Form>
         </Card>
+        </PageContent>
     )
 }
 

@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
+import {useEffect, useState} from 'react'
 import screenfull from 'screenfull'
-import { Button, message, Tooltip } from 'antd'
-import { FullscreenExitOutlined, FullscreenOutlined } from '@ant-design/icons'
+import {Button, message, Tooltip} from 'antd'
+import {FullscreenExitOutlined, FullscreenOutlined} from '@ant-design/icons'
 
-const Index = () => {
+const BtnFullscreen = () => {
     const [messageApi, contextHolder] = message.useMessage()
     const [isFullscreen, setIsFullscreen] = useState(false)
     const click = () => {
@@ -30,19 +30,24 @@ const Index = () => {
             {contextHolder}
             <Tooltip placement="bottom" title={title}>
                 <Button
-                    ghost
-                    icon={
-                        isFullscreen ? (
-                            <FullscreenExitOutlined />
-                        ) : (
-                            <FullscreenOutlined />
-                        )
-                    }
+                    type="text"
+                    icon={isFullscreen ? (<FullscreenExitOutlined
+                        style={{
+                            fontSize: '14px', color: 'white'
+                        }}
+                    />) : (<FullscreenOutlined
+                        style={{
+                            fontSize: '14px', color: 'white'
+                        }}
+                    />)}
                     onClick={click}
+                    style={{
+                        width: '48px', height: '48px',
+                    }}
                 />
             </Tooltip>
         </>
     )
 }
 
-export default Index
+export default BtnFullscreen

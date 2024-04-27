@@ -1,4 +1,4 @@
-import { ConfigProvider } from 'antd'
+import {App as AntdApp, ConfigProvider} from 'antd'
 import { RouterProvider } from 'react-router-dom'
 import { IRoutes } from './routes/IRoutes.tsx'
 import { themeConfig } from './theme/lightTheme.ts'
@@ -8,7 +8,9 @@ const App = () => {
     return (
         <AppProvider>
             <ConfigProvider theme={themeConfig}>
-                <RouterProvider router={IRoutes} />
+                <AntdApp>
+                    <RouterProvider router={IRoutes} />
+                </AntdApp>
             </ConfigProvider>
         </AppProvider>
     )
