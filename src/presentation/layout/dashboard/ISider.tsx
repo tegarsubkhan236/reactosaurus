@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom'
-import { useDashboardContext } from './DashboardContext.tsx'
 import { Layout, Menu, MenuProps, theme } from 'antd'
 import { IMenu } from '../../routes/IMenu.tsx'
 
@@ -33,7 +32,6 @@ const ISider = () => {
     const {
         token: { colorBgContainer },
     } = theme.useToken()
-    const { menuOrientation } = useDashboardContext()
     const navigate = useNavigate()
 
     const onOpenChange: MenuProps['onOpenChange'] = (openKeys) => {
@@ -57,7 +55,7 @@ const ISider = () => {
         }
     };
 
-    return menuOrientation === 'left' ? (
+    return (
         <Sider style={{
             background: colorBgContainer,
             width: '208px',
@@ -77,7 +75,7 @@ const ISider = () => {
                 }}
             />
         </Sider>
-    ) : null
+    )
 }
 
 export default ISider

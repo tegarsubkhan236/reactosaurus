@@ -1,6 +1,5 @@
 import {Layout} from 'antd'
 import {Outlet} from "react-router-dom";
-import { DashboardProvider } from './DashboardContext.tsx'
 import IHeader from './IHeader.tsx'
 import ISider from './ISider.tsx'
 
@@ -8,19 +7,17 @@ const {Content} = Layout
 
 const Dashboard = () => {
     return (
-        <DashboardProvider>
+        <Layout>
+            <IHeader />
             <Layout>
-                <IHeader />
+                <ISider />
                 <Layout>
-                    <ISider />
-                    <Layout>
-                        <Content>
-                            <Outlet />
-                        </Content>
-                    </Layout>
+                    <Content>
+                        <Outlet />
+                    </Content>
                 </Layout>
             </Layout>
-        </DashboardProvider>
+        </Layout>
     )
 }
 
