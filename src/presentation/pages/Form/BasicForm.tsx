@@ -15,13 +15,13 @@ const BasicForm = () => {
     return (
         <>
             <PageHeader
+                sticky={true}
                 title="Basic Form"
                 content={
                     <Typography.Text>
                         Form pages are used to collect or verify information to users, and basic forms are common in scenarios where there are fewer data items.
                     </Typography.Text>
                 }
-                style={{ position: 'sticky', top: 0, zIndex: 10 }}
             />
             <PageContent>
                 <Form

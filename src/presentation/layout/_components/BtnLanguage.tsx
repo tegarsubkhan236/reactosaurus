@@ -1,5 +1,5 @@
 import Icon from "@ant-design/icons";
-import languageSvg from "../assets/language.svg";
+import languageSvg from "../../assets/icon/language.svg";
 import {Button, GetProps} from "antd";
 
 type CustomIconComponentProps = GetProps<typeof Icon>;

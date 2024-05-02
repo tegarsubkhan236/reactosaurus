@@ -1,7 +1,8 @@
 import { MenuProps } from 'antd'
 import {
+    ArrowLeftOutlined,
     DashboardOutlined,
-    FormOutlined,
+    FormOutlined, MailOutlined, SettingOutlined,
     TableOutlined
 } from '@ant-design/icons'
 import React from "react";
@@ -24,7 +25,7 @@ function getItem(
     } as MenuItem;
 }
 
-export const IMenu: MenuItem[] = [
+export const SiderItems: MenuItem[] = [
     getItem('Dashboard', '/', <DashboardOutlined />),
     getItem('Form', 'form', <FormOutlined />, [
         getItem('Basic Form', 'form/basic_form'),
@@ -37,3 +38,9 @@ export const IMenu: MenuItem[] = [
         getItem('Search List Articles', 'list/search_list_articles'),
     ]),
 ]
+
+export const HeaderItems: MenuItem[] = [
+    getItem('My Profile', 'profile', <MailOutlined/>),
+    getItem('My Setting', 'profile/setting', <SettingOutlined/>),
+    getItem('Log out', 'login', <ArrowLeftOutlined/>),
+];

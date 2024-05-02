@@ -1,6 +1,6 @@
 import {App as AntdApp, ConfigProvider} from 'antd'
 import { RouterProvider } from 'react-router-dom'
-import { IRoutes } from './routes/IRoutes.tsx'
+import { router } from './routes/route.tsx'
 import { themeConfig } from './theme/lightTheme.ts'
 import { AppProvider } from './AppContext.tsx'
 
@@ -9,7 +9,7 @@ const App = () => {
         <AppProvider>
             <ConfigProvider theme={themeConfig}>
                 <AntdApp>
-                    <RouterProvider router={IRoutes} />
+                    <RouterProvider router={router} />
                 </AntdApp>
             </ConfigProvider>
         </AppProvider>

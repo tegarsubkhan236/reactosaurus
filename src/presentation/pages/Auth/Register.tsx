@@ -1,8 +1,10 @@
+import AuthLayout from "../../layout/AuthLayout";
+
 const Register = () => {
     return (
-        <div>
-
-        </div>
+        <AuthLayout>
+            <h1>Hallo Register</h1>
+        </AuthLayout>
     );
 };
 

@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom'
-import { default as DashboardLayout } from '../layout/dashboard/Dashboard.tsx'
+import DashboardLayout from "../layout/DashboardLayout";
 import AnalysisDashboard from "../pages/Dashboard/AnalysisDashboard.tsx";
 import BasicForm from "../pages/Form/BasicForm.tsx";
 import StepForm from "../pages/Form/StepForm.tsx";
@@ -9,8 +9,11 @@ import SearchListProjects from "../pages/List/SearchListProjects.tsx";
 import SearchListArticles from "../pages/List/SearchListArticles.tsx";
 import Login from "../pages/Auth/Login.tsx";
 import Register from "../pages/Auth/Register.tsx";
+import MyProfile from "../pages/MyProfile/MyProfile.tsx";
+import MySetting from "../pages/MySetting/MySetting.tsx";
+import ProfileLayout from "../layout/ProfileLayout";
 
-export const IRoutes = createBrowserRouter([
+export const router = createBrowserRouter([
     {
         path: '/',
         element: <DashboardLayout/>,
@@ -56,17 +59,25 @@ export const IRoutes = createBrowserRouter([
         ]
     },
     {
-        path: '/auth',
-        element: <DashboardLayout/>,
+        path: '/profile',
+        element: <ProfileLayout/>,
         children: [
             {
-                path: 'login',
-                element: <Login/>
+                index: true,
+                element: <MyProfile/>
             },
             {
-                path: 'register',
-                element: <Register/>
+                path: 'setting',
+                element: <MySetting/>
             },
         ]
+    },
+    {
+        path: '/login',
+        element: <Login/>
+    },
+    {
+        path: '/register',
+        element: <Register/>
     }
 ])

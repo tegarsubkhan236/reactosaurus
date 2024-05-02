@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom'
 import { Layout, Menu, MenuProps, theme } from 'antd'
-import { IMenu } from '../../routes/IMenu.tsx'
+import { SiderItems } from '../../routes/menuItem.tsx'
 
 const { Sider } = Layout
 
@@ -24,7 +24,7 @@ const getLevelKeys = (items1: LevelKeysProps[]) => {
     func(items1);
     return key;
 };
-const levelKeys = getLevelKeys(IMenu as LevelKeysProps[]);
+const levelKeys = getLevelKeys(SiderItems as LevelKeysProps[]);
 
 const ISider = () => {
     const [selectedKey, setSelectedKey] = useState<string>('/');
@@ -67,7 +67,7 @@ const ISider = () => {
                 defaultSelectedKeys={[selectedKey]}
                 openKeys={stateOpenKeys}
                 onOpenChange={onOpenChange}
-                items={IMenu}
+                items={SiderItems}
                 style={{ height: '100%'}}
                 onClick={({key}) => {
                     setSelectedKey(key)

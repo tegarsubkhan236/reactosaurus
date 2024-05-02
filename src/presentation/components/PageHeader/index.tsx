@@ -10,6 +10,7 @@ type PageHeaderProps = {
     backUrl?: string;
     extra?: ReactNode;
     content?: ReactNode;
+    sticky?: boolean;
     style?: CSSProperties;
 };
 
@@ -18,12 +19,20 @@ const Index = (props: PageHeaderProps) => {
         token: {colorBgContainer},
     } = theme.useToken();
 
+    const headerStyle: CSSProperties = {
+        background: colorBgContainer,
+        padding: '16px 24px',
+        ...props.style,
+    };
+
+    if (props.sticky) {
+        headerStyle.position = 'sticky';
+        headerStyle.top = 48;
+        headerStyle.zIndex = 1;
+    }
+
     return (
-        <div style={{
-            background: colorBgContainer,
-            padding: '16px 24px',
-            ...props.style,
-        }}>
+        <div style={headerStyle}>
             <Row style={{marginBottom: '8px'}}>
                 <Flex>
                     <Breadcrumb

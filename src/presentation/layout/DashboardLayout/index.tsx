@@ -1,15 +1,14 @@
-import {Layout} from 'antd'
+import MainLayout from "../MainLayout.tsx";
+import ISider from "../_partials/ISider.tsx";
+import {Layout} from "antd";
 import {Outlet} from "react-router-dom";
-import IHeader from './IHeader.tsx'
-import ISider from './ISider.tsx'
 
 const {Content} = Layout
 
-const Dashboard = () => {
+const Index = () => {
     return (
-        <Layout>
-            <IHeader />
-            <Layout>
+        <MainLayout>
+            <Layout hasSider>
                 <ISider />
                 <Layout>
                     <Content>
@@ -17,8 +16,8 @@ const Dashboard = () => {
                     </Content>
                 </Layout>
             </Layout>
-        </Layout>
-    )
-}
+        </MainLayout>
+    );
+};
 
-export default Dashboard
+export default Index;
